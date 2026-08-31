@@ -1,0 +1,18 @@
+{
+  "name": "netwatch",
+  "version": "1.0.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "exports": {},
+  "description": "Selected security, lifecycle, and plugin-runtime components from NetWatch.",
+  "type": "module",
+  "scripts": {
+    "check": "node --check src/core/actual-logout-alert.js && node --check src/core/connection-pairing.js && node --check src/core/notification-group.js && node --check src/core/password-reset-challenges.js && node --check src/core/password-reset-message.js && node --check src/core/plugin-host-event-bridge.js && node --check src/core/session-lifecycle.js && node --check src/core/temporary-media.js",
+    "test": "node --test",
+    "test:coverage": "node --test --experimental-test-coverage",
+    "verify": "npm run check && npm test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

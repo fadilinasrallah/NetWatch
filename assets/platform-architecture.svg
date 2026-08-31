@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1040" viewBox="0 0 1600 1040" role="img" aria-labelledby="title description">
+  <title id="title">NetWatch automation architecture</title>
+  <desc id="description">A private control panel sends requests to isolated account runtimes. Each runtime manages connection state and routes normalized events through a reliable host bridge to enabled automation plugins.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset="1" stop-color="#111d35"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#818cf8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#94a3b8"/>
+    </marker>
+    <style>
+      .title { font: 700 38px Inter, Segoe UI, Arial, sans-serif; fill: #f8fafc; }
+      .subtitle { font: 400 18px Inter, Segoe UI, Arial, sans-serif; fill: #94a3b8; }
+      .label { font: 700 15px Inter, Segoe UI, Arial, sans-serif; letter-spacing: 1.7px; fill: #67e8f9; }
+      .card-title { font: 700 21px Inter, Segoe UI, Arial, sans-serif; fill: #f8fafc; }
+      .copy { font: 400 15px Inter, Segoe UI, Arial, sans-serif; fill: #cbd5e1; }
+      .small { font: 600 13px Inter, Segoe UI, Arial, sans-serif; fill: #94a3b8; }
+      .card { fill: #17233b; stroke: #334155; stroke-width: 2; filter: url(#shadow); }
+      .primary { fill: #122c3e; stroke: #22d3ee; }
+      .session { fill: #1e2345; stroke: #818cf8; }
+      .plugin { fill: #172c2a; stroke: #34d399; }
+      .support { fill: #2b2235; stroke: #c084fc; }
+      .security { fill: #33251f; stroke: #fb923c; }
+      .arrow { fill: none; stroke: #94a3b8; stroke-width: 3; marker-end: url(#arrow); }
+      .dash { fill: none; stroke: #64748b; stroke-width: 2; stroke-dasharray: 8 8; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1040" rx="30" fill="url(#background)"/>
+  <text x="70" y="70" class="title">NetWatch automation architecture</text>
+  <text x="70" y="104" class="subtitle">Private control panel, isolated account runtimes, and reliable plugin handover</text>
+
+  <text x="80" y="160" class="label">CONTROL PLANE</text>
+  <rect x="80" y="185" width="330" height="125" rx="20" class="card primary"/>
+  <text x="245" y="230" text-anchor="middle" class="card-title">Private control panel</text>
+  <text x="245" y="263" text-anchor="middle" class="copy">Sessions, plugins, schedules,</text>
+  <text x="245" y="287" text-anchor="middle" class="copy">groups, alerts, and recovery</text>
+
+  <rect x="510" y="185" width="330" height="125" rx="20" class="card security"/>
+  <text x="675" y="230" text-anchor="middle" class="card-title">Authentication and API</text>
+  <text x="675" y="263" text-anchor="middle" class="copy">Revocable tokens, validation,</text>
+  <text x="675" y="287" text-anchor="middle" class="copy">rate limits, and origin checks</text>
+
+  <rect x="940" y="185" width="330" height="125" rx="20" class="card primary"/>
+  <text x="1105" y="230" text-anchor="middle" class="card-title">Session orchestrator</text>
+  <text x="1105" y="263" text-anchor="middle" class="copy">Lifecycle gates, connection state,</text>
+  <text x="1105" y="287" text-anchor="middle" class="copy">reconnect, cancel, and terminate</text>
+
+  <path d="M410 247 H510" class="arrow"/>
+  <path d="M840 247 H940" class="arrow"/>
+
+  <text x="80" y="390" class="label">ISOLATED ACCOUNT RUNTIME</text>
+  <rect x="80" y="415" width="300" height="135" rx="20" class="card session"/>
+  <text x="230" y="459" text-anchor="middle" class="card-title">Pairing state machine</text>
+  <text x="230" y="492" text-anchor="middle" class="copy">QR or phone code</text>
+  <text x="230" y="517" text-anchor="middle" class="copy">with phase-limited credentials</text>
+
+  <rect x="475" y="415" width="300" height="135" rx="20" class="card session"/>
+  <text x="625" y="459" text-anchor="middle" class="card-title">Account session</text>
+  <text x="625" y="492" text-anchor="middle" class="copy">Credentials, contacts, policy,</text>
+  <text x="625" y="517" text-anchor="middle" class="copy">connection and message events</text>
+
+  <rect x="870" y="415" width="300" height="135" rx="20" class="card primary"/>
+  <text x="1020" y="459" text-anchor="middle" class="card-title">Host event bridge</text>
+  <text x="1020" y="492" text-anchor="middle" class="copy">Buffer, drain, transfer,</text>
+  <text x="1020" y="517" text-anchor="middle" class="copy">dispatch, isolate, and stop</text>
+
+  <rect x="1265" y="415" width="255" height="135" rx="20" class="card plugin"/>
+  <text x="1392" y="459" text-anchor="middle" class="card-title">Plugin runtime</text>
+  <text x="1392" y="492" text-anchor="middle" class="copy">Enabled features and</text>
+  <text x="1392" y="517" text-anchor="middle" class="copy">isolated async handlers</text>
+
+  <path d="M1105 310 V350 H230 V415" class="arrow"/>
+  <path d="M380 482 H475" class="arrow"/>
+  <path d="M775 482 H870" class="arrow"/>
+  <path d="M1170 482 H1265" class="arrow"/>
+
+  <text x="80" y="635" class="label">SUPPORT SERVICES</text>
+  <rect x="80" y="660" width="325" height="145" rx="20" class="card support"/>
+  <text x="242" y="704" text-anchor="middle" class="card-title">Session state</text>
+  <text x="242" y="737" text-anchor="middle" class="copy">Atomic settings, token epochs,</text>
+  <text x="242" y="762" text-anchor="middle" class="copy">plugin state, and contact maps</text>
+
+  <rect x="475" y="660" width="325" height="145" rx="20" class="card security"/>
+  <text x="637" y="704" text-anchor="middle" class="card-title">Recovery security</text>
+  <text x="637" y="737" text-anchor="middle" class="copy">Opaque challenges, HMAC codes,</text>
+  <text x="637" y="762" text-anchor="middle" class="copy">cooldowns, expiry, and attempts</text>
+
+  <rect x="870" y="660" width="325" height="145" rx="20" class="card support"/>
+  <text x="1032" y="704" text-anchor="middle" class="card-title">Ephemeral media</text>
+  <text x="1032" y="737" text-anchor="middle" class="copy">Private task boundaries and</text>
+  <text x="1032" y="762" text-anchor="middle" class="copy">automatic release after use</text>
+
+  <rect x="1265" y="660" width="255" height="145" rx="20" class="card support"/>
+  <text x="1392" y="704" text-anchor="middle" class="card-title">Durable outboxes</text>
+  <text x="1392" y="737" text-anchor="middle" class="copy">Stable event identities,</text>
+  <text x="1392" y="762" text-anchor="middle" class="copy">retry and deduplication</text>
+
+  <path d="M625 550 V605 H242 V660" class="dash"/>
+  <path d="M625 550 V660" class="dash"/>
+  <path d="M1020 550 V660" class="dash"/>
+  <path d="M1392 550 V660" class="dash"/>
+
+  <rect x="180" y="890" width="1240" height="85" rx="22" fill="url(#accent)" opacity="0.95"/>
+  <text x="800" y="927" text-anchor="middle" style="font:700 22px Inter,Segoe UI,Arial,sans-serif;fill:#07111f">One account failure cannot stop another account or unrelated plugin</text>
+  <text x="800" y="956" text-anchor="middle" style="font:600 14px Inter,Segoe UI,Arial,sans-serif;fill:#17233b">Credentials and private data remain inside the production boundary</text>
+</svg>
